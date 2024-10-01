@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video Recorder and Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="bg-container">
+        <h1 class="heading">Welcome!</h1>
+        <button id="clickButton" class="main-button">Click here</button>
+    </section>
+
+    <div id="mainContent" class="hidden">
+        <div class="video-container">
+            <video class="video" autoplay muted></video>
+            <div class="filter-layer"></div>
+        </div>
+
+        <div class="controls">
+            <div class="record-btn-cont">
+                <button class="record-btn">Record</button>
+            </div>
+            <div class="capture-btn-cont">
+                <button class="capture-btn">Capture</button>
+            </div>
+            <div class="filters">
+                <div class="filter" style="background-color: rgba(255, 0, 0, 0.3);"></div>
+                <div class="filter" style="background-color: rgba(0, 255, 0, 0.3);"></div>
+                <div class="filter" style="background-color: rgba(0, 0, 255, 0.3);"></div>
+                <div class="filter" style="background-color: transparent;"></div>
+            </div>
+            <div class="timer">00:00:00</div>
+        </div>
+
+        <div class="chat-container">
+            <div id="messages" class="messages"></div>
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
+            <button id="clear-button">Clear Chat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

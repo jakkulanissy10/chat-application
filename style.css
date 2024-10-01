@@ -1,0 +1,326 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #515255;
+    margin: 0;
+    padding: 2px;
+}
+
+/* Hidden class to hide elements */
+.hidden {
+    display: none;
+}
+
+/* Background Container */
+
+/* Video Container */
+.video-container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    background-color: #000;
+    margin: 0 auto;
+    /* Centering */
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.filter-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Controls */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.record-btn-cont,
+.capture-btn-cont {
+    margin-bottom: 10px;
+}
+
+.record-btn,
+.capture-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.record-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.capture-btn {
+    background-color: #4da6ff;
+    color: #fff;
+}
+
+.record-btn.scale-record {
+    transform: scale(1.2);
+    animation: pulse 1s infinite;
+}
+
+.capture-btn.scale-capture {
+    transform: scale(1.2);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    transition: border-color 0.3s;
+}
+
+.filter:hover {
+    border-color: #000;
+}
+
+/* Timer */
+.timer {
+    font-size: 18px;
+    margin-top: 10px;
+    display: none;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 640px;
+    margin: 30px auto;
+    /* Centering */
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+}
+
+.message video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#message-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#send-button,
+#clear-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 9px;
+    transition: background-color 0.3s;
+}
+
+#send-button {
+    background-color: #5cd65c;
+    color: #fff;
+}
+
+#send-button:hover {
+    background-color: #4caf50;
+}
+
+#clear-button {
+    background-color: #ff6666;
+    color: #fff;
+}
+
+#clear-button:hover {
+    background-color: #ff4d4d;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+
+    .video-container,
+    .chat-container {
+        width: 100%;
+    }
+
+    /* Adjust button sizes for smaller screens */
+    .record-btn,
+    .capture-btn,
+    #send-button,
+    #clear-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .timer {
+        font-size: 16px;
+    }
+}
+
+/* Additional Styles */
+
+/* Add focus styles for buttons */
+.record-btn:focus,
+.capture-btn:focus,
+#send-button:focus,
+#clear-button:focus,
+#clickButton:focus {
+    outline: 2px solid #ff4d4d;
+    /* or another color of your choice */
+}
+
+/* Message hover effect */
+.message:hover {
+    background-color: #d9d9d9;
+    /* Slightly darker for visibility */
+    transition: background-color 0.2s;
+}
+
+/* Animation for messages (fade-in effect) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.message {
+    animation: fadeIn 0.5s ease-in;
+}
+
+#bg-container {
+    background-image: url("https://wallpapercave.com/wp/qFSF4ob.jpg");
+    background-size: cover;
+    /* Ensures the background image covers the entire element */
+    background-position: center;
+    /* Centers the background image */
+    height: 100vh; 
+    width: 100%;
+    /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    /* Allows for absolute positioning of child elements if needed */
+}
+
+.heading {
+    font-size: 6vw;
+    /* Responsive font size */
+    font-family: "Sans-Serif";
+    text-align: center;
+    /* Centers the heading text */
+}
+
+.main-button {
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px #fff solid;
+    border-radius: 10px;
+    font-size: 2vw;
+    /* Responsive font size */
+    padding: 9px;
+    /* Responsive padding */
+    font-family: "Slightly";
+    transition: background-color 0.3s, transform 0.2s;
+    /* Smooth transition for hover effect */
+}
+
+.main-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slight background change on hover */
+    transform: scale(1.05);
+    /* Slightly scale up the button on hover */
+}
+
+/* Additional Media Queries */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 8vw;
+        /* Larger font size for smaller screens */
+    }
+
+    .main-button {
+        font-size: 3vw;
+        /* Adjust button font size for smaller screens */
+        padding: 5px;
+        /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 10vw;
+        /* Even larger font size for very small screens */
+    }
+
+    .main-button {
+        font-size: 4vw;
+        /* Larger button font size for very small screens */
+        padding: 5px;
+        /* Adjust padding further for very small screens */
+    }
+}
